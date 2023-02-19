@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="managerModule.Task">
+        <methods>
+          <include name="createTeamTask"/>
+          <include name="preRequisite"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- managerModule.Task -->
+      <class name="managerModule.Lead">
+        <methods>
+          <include name="createLead"/>
+          <include name="closeBrowser"/>
+          <include name="preRequisite"/>
+          <include name="updateLead"/>
+          <include name="deleteLead"/>
+        </methods>
+      </class> <!-- managerModule.Lead -->
+      <class name="managerModule.Customers">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="customerUpdate"/>
+          <include name="preRequisite"/>
+          <include name="createCustomer"/>
+          <include name="customerDelete"/>
+        </methods>
+      </class> <!-- managerModule.Customers -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
