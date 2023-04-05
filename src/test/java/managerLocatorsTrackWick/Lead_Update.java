@@ -1,56 +1,61 @@
 package managerLocatorsTrackWick;
 
-import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-
-import junit.framework.Assert;
-import managerActions.LoginTrackWick;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Lead_Update {
-	LoginTrackWick.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	WebDriver driver;
+	public Lead_Update(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 	
-	Thread.sleep(5000);
+	/*--------------------------------------- Lead Update ----------------------------------------*/
+
 	//click on lead link
-	LoginTrackWick.driver.findElement(By.xpath("//a[text()= 'Lead'][1]")).click();
+	@FindBy(xpath ="//a[text()= 'Lead'][1]")
+	WebElement clickLeadLLink;
 			
 			
-	//Clicking on lead
-	LoginTrackWick.driver.findElement(By.xpath("(//a)[29]")).click();
+	//Clicking on lead from the list
+	@FindBy(xpath = "(//a)[29]")
+	WebElement clickLead;
 	
 	
-	Thread.sleep(3000);
 	//Clicking on edit button in lead details to open edit dialog box.
-	LoginTrackWick.driver.findElement(By.xpath("(//button[@type='button'])[4]")).sendKeys(Keys.ENTER);
+	@FindBy(xpath = "(//button[@type='button'])[4]")
+	WebElement clickEditBtton;
 	
 	
-	Thread.sleep(2000);
+	//Clicking Lead Type field
+	@FindBy(xpath = "(//div)[236]")
+	WebElement clickLeadTypeField;
 	
-	//Updating Lead Type
-	LoginTrackWick.driver.findElement(By.xpath("(//div)[236]")).click();
-	LoginTrackWick.driver.findElement(By.cssSelector("li[title='WARM']")).click();
+	//Selecting a lead type from the list
+	@FindBy(css = "li[title='WARM']")
+	WebElement clickLeadType;
 	
-	Thread.sleep(1000);
-	//Updating mobile number
-	LoginTrackWick.driver.findElement(By.cssSelector("#mobile-number-02")).sendKeys(Keys.CONTROL+"a");
-	LoginTrackWick.driver.findElement(By.cssSelector("#mobile-number-02")).sendKeys(Keys.DELETE);
-	LoginTrackWick.driver.findElement(By.xpath("//input[@id='mobile-number-02']")).sendKeys("9756412005");
+
+	//Selecting mobile number field, clearaing & updating new number
+	@FindBy(css = "#mobile-number-02")
+	WebElement leadMobileField;
 	
 	
-	//updating owner
-	LoginTrackWick.driver.findElement(By.xpath("(//div)[246]")).click();
+	//Clicking owner
+	@FindBy(xpath = "(//div)[246]")
+	WebElement clickLeadOwnerField;
 	
-	LoginTrackWick.driver.findElement(By.cssSelector("li[title='Durgesh Singh']")).click();
+	//Selecting an owner from the list
+	@FindBy(css = "li[title='Durgesh Singh']")
+	WebElement selectLeadOwner;
 
 
 			
 	//Clicking on update button in model
-	LoginTrackWick.driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
-			
-	String text = LoginTrackWick.driver.findElement(By.xpath("(//div[@title='Durgesh Singh'])[1]")).getText();
-	System.out.println("I am here 2 "+text);
-	//Asserting Owner
-	Assert.assertEquals("Durgesh Singh",text);	
+	@FindBy(xpath = "(//button[@type='submit'])[1]")
+	WebElement clickLeadUpdateButton;
 
 }

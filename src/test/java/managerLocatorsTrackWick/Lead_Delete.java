@@ -1,23 +1,35 @@
 package managerLocatorsTrackWick;
 
-import org.openqa.selenium.By;
-
-import managerActions.LoginTrackWick;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Lead_Delete {
-	Thread.sleep(5000);
+	WebDriver driver;
+	
+	public Lead_Delete(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+
 	//click on lead link
-	LoginTrackWick.driver.findElement(By.xpath("//a[text()= 'Lead'][1]")).click();
+	@FindBy (xpath = "//a[text()= 'Lead'][1]")
+	WebElement clickLeadLink;
 			
 			
-	//Clicking on lead
-	LoginTrackWick.driver.findElement(By.xpath("(//a)[29]")).click();
+	//Clicking on lead from the list
+	@FindBy(xpath = "(//a)[29]")
+	WebElement clickCreateLead;
+	
 	
 	//Clicking on delete button
-	LoginTrackWick.driver.findElement(By.xpath("(//img)[2]")).click();
-	Thread.sleep(2000);
+	@FindBy(xpath = "(//img)[2]")
+	WebElement clickLeadDelButton;
 	
 	//Clicking on yes button
-	LoginTrackWick.driver.findElement(By.xpath("//div[@role='tooltip']//button[2]")).click();
+	@FindBy(xpath = "//div[@role='tooltip']//button[2]")
+	WebElement clickConfirmDelLeadButton;
 
 }

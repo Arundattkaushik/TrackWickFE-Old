@@ -1,13 +1,10 @@
 package managerLocatorsTrackWick;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import commons.Commons;
 
 public class Update_Task {
 	
@@ -17,7 +14,9 @@ public class Update_Task {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	//--------------------------- Update Task ---------------------------------------------------
+	
+	/*------------------------------ Update Task ------------------------------------*/
+	
 		//Clicking on created task title
 		@FindBy (xpath = "//tbody/tr[1]/td[2]/div/div/a/span")
 		public
@@ -109,8 +108,5 @@ public class Update_Task {
 		@FindBy (xpath = "//tbody/tr/td[3]//span")
 		public
 		WebElement UpdatedAssignee;
-	//-------------------------------------------------------------------------------------------
-		
-		
 
 }

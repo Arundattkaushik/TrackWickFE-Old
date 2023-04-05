@@ -4,14 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import commons.Commons;
+import commons.Utils;
 
 
 public class Lead_Create {
 	
 	WebDriver driver;
 	public Lead_Create() {
-		this.driver = Commons.driver;
+		this.driver = Utils.driver;
 		PageFactory.initElements(driver, this);
 	}
 	

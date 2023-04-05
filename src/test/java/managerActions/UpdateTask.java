@@ -2,12 +2,12 @@ package managerActions;
 
 import org.openqa.selenium.Keys;
 
-import commons.Commons;
+import commons.Utils;
 import managerLocatorsTrackWick.Update_Task;
 
 
 public class UpdateTask {
-	Update_Task ut = new Update_Task(Commons.driver);
+	Update_Task ut = new Update_Task(Utils.driver);
 	
 	public String updateTask() throws InterruptedException {
 		
@@ -44,14 +44,14 @@ public class UpdateTask {
 		
 		
 		Thread.sleep(200);
-		Commons.crsr.moveToElement(ut.SelectPriority).click().perform();
+		Utils.crsr.moveToElement(ut.SelectPriority).click().perform();
 		
 		Thread.sleep(200);
 		String oldAssigne = ut.AssigneeField.getText();
 		ut.AssigneeField.click();
 		
 		Thread.sleep(200);
-		Commons.crsr.moveToElement(ut.SelectAssignee).click().perform();
+		Utils.crsr.moveToElement(ut.SelectAssignee).click().perform();
 		
 		Thread.sleep(200);
 		ut.NameField.sendKeys("Automation Sanity");

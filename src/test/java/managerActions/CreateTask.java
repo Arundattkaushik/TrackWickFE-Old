@@ -1,11 +1,11 @@
 package managerActions;
 
-import commons.Commons;
+import commons.Utils;
 import managerLocatorsTrackWick.Create_Task;
 
 public class CreateTask {
 	
-	Create_Task ct = new Create_Task(Commons.driver);
+	Create_Task ct = new Create_Task(Utils.driver);
 	
 public String createTask() throws InterruptedException {
 		
@@ -19,7 +19,7 @@ public String createTask() throws InterruptedException {
 		
 		ct.taskTypeField.click();
 		
-		Commons.crsr.moveToElement(ct.selectTaskForm).click().perform();
+		Utils.crsr.moveToElement(ct.selectTaskForm).click().perform();
 		
 		
 		ct.leadField.click();

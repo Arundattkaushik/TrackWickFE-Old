@@ -5,9 +5,9 @@
     <classes>
       <class name="testRunner.ManagerModule">
         <methods>
+          <include name="reports"/>
           <include name="login"/>
           <include name="quitBrowser"/>
-          <include name="lead"/>
         </methods>
       </class> <!-- testRunner.ManagerModule -->
     </classes>
